@@ -23,7 +23,7 @@ public class DbConnection {
     /*password*/
     private String dbName = "kutuphane";
     /*DB Name*/
-    private String database_url = "jdbc:mysql://127.0.0.1:3306/izinTakip?characterEncoding=utf8";
+    private String database_url = "jdbc:mysql://127.0.0.1:3306/"+dbName+"?characterEncoding=utf8";
 
     /*db url*/
 
