@@ -67,42 +67,4 @@ public class DbConnection {
         return con;
     }
 
-    public void Backupdbtosql(String saveLocation) {
-        try {
-
-            String executeCmd = "";
-            executeCmd = "mysqldump -u " + user + " -p" + pass + " --add-drop-database -B " + dbName + " -r "+saveLocation+"/backup.sql";
-
-            Process runtimeProcess = Runtime.getRuntime().exec(executeCmd);
-            int processComplete = runtimeProcess.waitFor();
-            if (processComplete == 0) {
-                System.out.println("Backup taken successfully..!");
-            } else {
-                System.out.println("Could not take mysql backup");
-            }
-
-        } catch (IOException | InterruptedException ex) {
-            JOptionPane.showMessageDialog(null, "Error at Backuprestore" + ex.getMessage());
-        }
-    }
-
-    public void Restoredbfromsql(String recieveLocation) {
-        try {
-            String[] executeCmd;
-            executeCmd = new String[]{"/bin/sh", "-c", "mysql -u" + user + " -p" + pass +  " < "+ recieveLocation +"/backup.sql"};//burayı stored prosedure ile yap.. 
-            System.out.println("Database Restoring..");
-            Process runtimeProcess = Runtime.getRuntime().exec(executeCmd);
-            int processComplete = runtimeProcess.waitFor();
-            if (processComplete == 0) {
-                JOptionPane.showMessageDialog(null, "Restore Successfull!");
-            } else {
-                JOptionPane.showMessageDialog(null, "Restore Failure!");
-            }
-            
-
-        } catch (IOException | InterruptedException ex) {
-            JOptionPane.showMessageDialog(null, "Error at Backuprestore" + ex.getMessage());
-        }
-    }
-
 }
