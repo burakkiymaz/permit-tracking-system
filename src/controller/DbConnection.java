@@ -17,9 +17,9 @@ import javax.swing.JOptionPane;
 public class DbConnection {
 
     private Connection con;
-    private String user = "root";
+    private String user = "username"; // PLEASE ENTER YOUR USER NAME
     /*mysql user name*/
-    private String pass = "bnmsql";
+    private String pass = "password"; //PLEASE ENTER YOUR MYSQL PASSWORD
     /*password*/
     private String dbName = "izinTakip";
     /*DB Name*/
