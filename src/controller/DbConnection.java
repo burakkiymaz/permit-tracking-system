@@ -21,7 +21,7 @@ public class DbConnection {
     /*mysql user name*/
     private String pass = "bnmsql";
     /*password*/
-    private String dbName = "kutuphane";
+    private String dbName = "izinTakip";
     /*DB Name*/
     private String database_url = "jdbc:mysql://127.0.0.1:3306/"+dbName+"?characterEncoding=utf8";
 
